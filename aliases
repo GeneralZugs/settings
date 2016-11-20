@@ -1,0 +1,102 @@
+# Filesystem aliases
+alias 'cd..'='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias l="less -i -M -N"
+alias la="/bin/ls -lAFh"
+alias ll="/bin/ls -lFh"
+alias lld="ls -l | grep ^d"
+alias lll='ls -lh | less'
+alias l.='ls -ldA .*'
+alias g='grep -i'
+
+# Packages stuff
+alias pak='apt-cache pkgnames | grep -i'
+alias ins='apt-get install'
+alias show='apt-cache show'
+alias search='apt-file search'
+alias dpkgs='dpkg -l | grep -i'
+alias ag='apt-get'
+alias agi='apt-get install'
+alias agc='apt-get clean'
+alias agr='apt-get remove'
+alias agp='apt-get purge'
+alias ap='apt-get'
+alias api='apt-get install'
+alias apc='apt-get clean'
+alias apr='apt-get remove'
+alias app='apt-get purge'
+
+# Typos
+alias sl='ls'
+alias cls='clear'
+alias dir='ls -lh'
+alias ipconfig='ifconfig -a'
+
+
+# Helpers
+alias grep='grep --color=auto'
+alias df='df -h' # disk free, in Gigabytes, not bytes
+alias du='du -h -c' # calculate disk usage for a folder
+alias s="du -sch * | egrep '^[0-9.]+[MG]' | sort -h"
+alias u='du -h --max-depth=1'
+alias f='find . | grep -i'
+alias fp='ps axuw | grep -i' # find process
+alias kp='kill -9 ' # kill process
+alias sp='suspend'
+alias suz='su -s /bin/zsh'
+alias memusage='ps -auxw --sort rss'
+alias watchmem="watch -d -n 1 'ps aux --sort -rss | head'"
+alias up='uptime'
+alias hi='history'
+alias top='top -d 1'
+alias scr='screen'
+alias vt100="export TERM=vt100" # obsolete?
+alias F='finger'
+alias mv='mv -i'
+alias so='source'
+alias wa='watch -n 1'
+alias wg='wget -E -nc -k -p -o log -r -t0 -l0'
+alias fs="stat -f \"%z bytes\"" # File size
+alias rot13='tr a-zA-Z n-za-mN-ZA-M' # ROT13-encode text. Works for decoding, too! ;)
+alias trimcopy="tr -d '\n' | xclip" # Trim new lines and copy to clipboard
+alias volcd='dd if=/dev/cdrom bs=1 skip=32808 count=32'
+alias makeiso='mkisofs -r -J -v -iso-level 2'
+alias atip='cdrecord -dev=0,0 -atip'
+alias sshfs="sshfs -o follow_symlinks"
+alias genpass="dd if=/dev/random count=1 bs=8 2>/dev/null | base64 | sed -e 's/=*$//'"
+alias destroy='shred -u -z -n 15'
+#alias whois="whois -h whois-servers.net" # Enhanced WHOIS lookups
+
+# Applications
+alias d='display'
+alias vi='vim'
+alias vima="vim -u $HOME/.vimrcalt"
+alias gqview='geeqie'
+alias p='gqview'
+alias gq='gqview'
+alias yt='youtube-dl'
+
+# IP addresses
+alias eip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d eth0 -t '^(GET|POST)' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Radio streamovi
+alias hrt1='mplayer -playlist http://playerservices.streamtheworld.com/pls/PROGRAM1.pls'
+alias hrt2='mplayer -playlist http://playerservices.streamtheworld.com/pls/PROGRAM2.pls'
+alias hrt3='mplayer -playlist http://playerservices.streamtheworld.com/pls/PROGRAM3.pls'
+alias rsljeme='mplayer -playlist http://playerservices.streamtheworld.com/pls/SLJEME.pls'
+alias rpula='mplayer -playlist http://playerservices.streamtheworld.com/pls/PULA.pls'
+alias rosijek='mplayer -playlist http://playerservices.streamtheworld.com/pls/OSIJEK.pls'
+alias rsplit='mplayer -playlist http://playerservices.streamtheworld.com/pls/SPLIT.pls'
+alias rrijeka='mplayer -playlist http://playerservices.streamtheworld.com/pls/RIJEKA.pls'
+alias otvoreni='mplayer -playlist http://otvoreni.hr/UserDocsImages/stream.pls'
+alias mreznica='mplayer -playlist http://s3.iqstreaming.com/tunein.php/mreznica/playlist.pls'
+alias antenazg='mplayer -playlist http://s7.iqstreaming.com/tunein.php/antenazagrebmp3/playlist.pls'
+
