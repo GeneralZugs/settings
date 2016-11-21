@@ -143,6 +143,7 @@ slrn
 smartmontools
 sniffit
 sockstat
+sqlite3
 ssh
 sshfs
 strace
