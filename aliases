@@ -68,6 +68,7 @@ alias atip='cdrecord -dev=0,0 -atip'
 alias sshfs="sshfs -o follow_symlinks"
 alias genpass="dd if=/dev/random count=1 bs=8 2>/dev/null | base64 | sed -e 's/=*$//'"
 alias destroy='shred -u -z -n 15'
+alias newest='find . -type f -printf "%T@ %p\n" | sort -n | cut -d" " -f 2 | tail -n 1' # find the last modified file
 #alias whois="whois -h whois-servers.net" # Enhanced WHOIS lookups
 
 # Applications
